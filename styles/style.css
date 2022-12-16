@@ -1,0 +1,113 @@
+:root {
+  /* Colour Scheme */
+  --background-color: rgba(51, 57, 64, 1);
+  --primary-color: rgba(232, 102, 236, 1);
+  --primary-color-06: rgba(232, 102, 236, 0.6);
+  --primary-color-03: rgba(232, 102, 236, 0.3);
+  --secondary-color: rgba(224, 234, 229, 1);
+
+  /* Border Styling */
+  --border-radius: 5px;
+}
+
+body {
+  margin: 10px;
+  background-color: var(--background-color);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+h1 {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  line-height: 1;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+h1+p {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: auto;
+  max-width: 105ch;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+}
+
+.snippet-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 300px;
+}
+
+.product-card {
+  border: 2px dashed var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 300px;
+}
+
+.product-card h2 {
+  padding: 0 10px;
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  color: var(--primary-color);
+  position: relative;
+  margin-top: -25px;
+  background-color: var(--background-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.product-card:hover, .product-card:hover h2 {
+  box-shadow: inset 0px 0px 8px
+  var(--primary-color), 0 0 15px var(--primary-color);
+}
+
+.product-card p {
+  color: var(--primary-color)
+}
+
+.product-card pre {
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(
+    var(--primary-color-03) 0%,
+    var(--primary-color-06) 100%
+  );
+  padding: 5px;
+  user-select: all;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 768px) {
+  .snippet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+
+  .product-card {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .snippet-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
